@@ -2,7 +2,7 @@ Example with routing params. List of users and detail of user.
 
 > you can start server by `npm start` command
 
-##List of users
+## List of users
 
 ```Typescript
 server.get('/users', (req, res) => {
@@ -18,7 +18,7 @@ server.get('/users', (req, res) => {
 });
 ```
 
-##Detail of user
+## Detail of user
 
 ```Typescript
 server.get('/user/:id', (req, res) => {
