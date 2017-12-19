@@ -1,0 +1,14 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  },
+  "author": "lukaskellerstein",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
