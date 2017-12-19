@@ -26,8 +26,25 @@ npm install express --save
 
 1. Build a server
 
+![alt tag](https://raw.githubusercontent.com/lukaskellerstein/NodeJsExpressSamples/master/images/Selection_010.png)
+
+In folder with a server run 
+
+```Shell
+tsc
+```
+
+, then it build server into folder, which you set as outDir in your tsconfig.json
+
+![alt tag](https://raw.githubusercontent.com/lukaskellerstein/NodeJsExpressSamples/master/images/Selection_013.png)
 
 
 2. Run a server
+
+Go to the outDir folder with your builded server and run `node server.js`
+
+
+![alt tag](https://raw.githubusercontent.com/lukaskellerstein/NodeJsExpressSamples/master/images/Selection_011.png)
+
 
 ## Variant 2 - Typescript
