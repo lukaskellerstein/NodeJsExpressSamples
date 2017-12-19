@@ -13,7 +13,7 @@ cd testapp
 npm init
 ```
 
-This will create folder with package.json
+This will create a folder with package.json
 
 ```Shell
 npm install express --save

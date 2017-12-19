@@ -1,2 +1,3 @@
-1. the simplest variant
-2. the simplest variant with multiple endpoints
+1. The simplest variant
+2. The simplest variant with multiple endpoints
+3. Routing params
