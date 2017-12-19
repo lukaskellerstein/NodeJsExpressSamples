@@ -59,7 +59,6 @@ server.get('/user/:id', (req, res) => {
 
     });
 
-
     res.send(buffer);
 });
 
