@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "rxjs": "6.2.1",
+    "babel-cli": "6.26.0",
+    "babel-preset-es2015": "6.24.1"
+  },
+  "scripts": {
+    "start": "babel-node --presets es2015 app.js"
+  }
+}
