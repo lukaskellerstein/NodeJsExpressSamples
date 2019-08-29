@@ -5,6 +5,8 @@ var num1 = 5;
 var str1 = '';
 var bool1 = true;
 
+var aaa = num1;
+
 // ---------------------------------
 // non-primitive (Stored with memory with pointer to the 'object')
 // ---------------------------------
