@@ -1,6 +1,10 @@
-//-------------------------------
+
+// ------------------------------------------------------------------------
+// OVERVIEW
+// ------------------------------------------------------------------------
+
+
 // NO INTERFACES !!!!!
-//-------------------------------
 
 // Classes
 class Car {
@@ -50,20 +54,14 @@ class SlowCar extends Car {
     super(name, maxSpeed, horsePower);
   }
 
-  // overloading
+  // overriding
   statistics(input) {
     return `SLOOOOOOOW ${input}`;
   }
 
-  // WARNING - NOT POSSIBLE !!!!!
-  // SECOND METHOD WILL OVERRIDE THE PREVIOUS !!!!!
-  //   statistics(a, b) {
-  //     return `slow ${a} - ${b}`;
-  //   }
 }
 
 // USAGE
 
 let trabant = new SlowCar('Trabant', 70, 40);
 console.log(trabant.statistics('VERY'));
-// console.log(trabant.statistics(50, 60));

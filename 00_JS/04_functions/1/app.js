@@ -12,10 +12,15 @@ function doSomething() {
   return 'aaa';
 }
 
+function doSomething(text){
+  return text;
+}
+
 // Function invocation/call/execution
 console.log(result());
 console.log(result2());
 console.log(doSomething());
+console.log(doSomething('bbb'));
 
 // ------------------------------------------------------------
 // ------------------------------------------------------------

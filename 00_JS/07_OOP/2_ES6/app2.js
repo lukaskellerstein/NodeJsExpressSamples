@@ -1,3 +1,7 @@
+// ---------------------------------------------------
+// Inheritance II.
+// ---------------------------------------------------
+
 class baseModel {
   constructor(options = {}, data = []) {
     // class constructor
