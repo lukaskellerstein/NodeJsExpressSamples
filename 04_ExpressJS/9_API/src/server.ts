@@ -8,7 +8,6 @@ import { endpointDatabase } from './db/endpoint.db';
 import { getGuid, sleep } from './helpers';
 
 let server = express();
-
 server.use(cors());
 
 server.use(bodyParser.json());
@@ -17,9 +16,9 @@ server.use(bodyParser.urlencoded({ extended: true }));
 let clusterDb = clusterDatabase;
 let endpointDb = endpointDatabase;
 
-server.get('/', (req, res) => {
+server.get("/", (req, res) => {
   res.json({
-    message: 'Your API is WORKING ...'
+    message: "Your API is WORKING ..."
   });
 });
 
@@ -29,7 +28,7 @@ server.get('/', (req, res) => {
 // --------------------------------------------------
 // --------------------------------------------------
 
-server.get('/clusters', (req, res) => {
+server.get("/clusters", (req, res) => {
   // res.json(clusterDb);
 
   sleep(1000).then(() => {
@@ -37,7 +36,7 @@ server.get('/clusters', (req, res) => {
   });
 });
 
-server.post('/clusters', (req, res) => {
+server.post("/clusters", (req, res) => {
   const itemOrigin = req.body;
   const item = cloneDeep(itemOrigin);
   item.metadata.uid = getGuid();
@@ -47,7 +46,7 @@ server.post('/clusters', (req, res) => {
   res.json(item);
 });
 
-server.put('/cluster/:id', (req, res) => {
+server.put("/cluster/:id", (req, res) => {
   let id = req.params.id;
   const itemOrigin = cloneDeep(req.body);
 
@@ -57,7 +56,7 @@ server.put('/cluster/:id', (req, res) => {
   res.json({});
 });
 
-server.get('/cluster/:id', (req, res) => {
+server.get("/cluster/:id", (req, res) => {
   let id = req.params.id;
   const item = clusterDb.filter(o => o.metadata.uid === id);
   res.json(item);
@@ -69,13 +68,13 @@ server.get('/cluster/:id', (req, res) => {
 // --------------------------------------------------
 // --------------------------------------------------
 
-server.get('/endpoints', (req, res) => {
+server.get("/endpoints", (req, res) => {
   sleep(1000).then(() => {
     res.json(endpointDb);
   });
 });
 
-server.post('/endpoints', (req, res) => {
+server.post("/endpoints", (req, res) => {
   const itemOrigin = req.body;
   const item = cloneDeep(itemOrigin);
   item.metadata.uid = getGuid();
@@ -85,7 +84,7 @@ server.post('/endpoints', (req, res) => {
   res.json(item);
 });
 
-server.put('/endpoint/:id', (req, res) => {
+server.put("/endpoint/:id", (req, res) => {
   let id = req.params.id;
   const itemOrigin = cloneDeep(req.body);
 
@@ -95,10 +94,63 @@ server.put('/endpoint/:id', (req, res) => {
   res.json({});
 });
 
-server.get('/endpoint/:id', (req, res) => {
+server.get("/endpoint/:id", (req, res) => {
   let id = req.params.id;
   const item = endpointDb.filter(o => o.metadata.uid === id);
   res.json(item);
 });
 
-server.listen(4333, console.log(`server is listening on 4333`));
+// --------------------------------------------------
+// --------------------------------------------------
+// ERRORS
+// --------------------------------------------------
+// --------------------------------------------------
+
+server.get("/200", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(200).json({ message: "OK" });
+  });
+});
+server.get("/400", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(400).json({ message: "Bad Request" });
+  });
+});
+server.get("/401", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(401).json({ message: "Unauthorize" });
+  });
+});
+server.get("/500", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(500).json({ message: "Server Error" });
+  });
+});
+server.post("/500", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(500).json({ message: "Server Error" });
+  });
+});
+server.delete("/500", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(500).json({ message: "Server Error" });
+  });
+});
+server.put("/500", (req, res) => {
+  sleep(1000).then(() => {
+    res.status(500).json({ message: "Server Error" });
+  });
+});
+
+server.get("/test", (req, res) => {
+  sleep(1000).then(() => {
+    res.json({
+      aaa: NaN
+    });
+  });
+});
+
+// RUN
+server.listen(4333, () => {
+  console.log(`server is listening on 4333`);
+});
