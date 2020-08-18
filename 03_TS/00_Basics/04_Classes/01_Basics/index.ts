@@ -120,8 +120,11 @@ var5.uid = 'asdfasfasfsaf';
 var5.name = 'myfirstRectange';
 
 // wrong
-const var4: Rectange = <Rectange>{ uid: 'asdfasfasfsaf', name: 'myfirstRectange' };
+const var4: Rectange = <Rectange>{ uid: 'asdfasfasfsaf', name: 'myfirstRectange'};
 console.log(var4);
+
+const var44 = { uid: 'asdfasfasfsaf', name: 'myfirstRectange' } as Rectange;
+console.log(var44);
 
 
 //generic ------------

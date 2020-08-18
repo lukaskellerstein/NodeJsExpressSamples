@@ -26,6 +26,8 @@ function add(a: any, b:any): any {
 // What is really Function ??? 
 // -----------------------------------------------------------------------
 
+const aa= () => {}
+
 // 1. - Function = "(...args: any[]) => any"
 const func1: (...args: any[]) => any = (a: number, b: number) => {return a+b};
 console.log(func1(1,2,3,4));

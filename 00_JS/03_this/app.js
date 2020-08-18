@@ -122,7 +122,8 @@ myFunc();
 var obj3 = {
   name: 'someName',
   func1: () => {
-    console.log('obj3.func1', typeOfGlobalObject(this));
+        var aaa = 5;
+        console.log('obj3.func1', typeOfGlobalObject(this));
   }
 };
 

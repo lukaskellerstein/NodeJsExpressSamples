@@ -19,7 +19,8 @@ console.log(obj1);
 // -----------------------
 
 function fce1() {
-  let prop1 = 'aaa';
+  var prop1 = 'aaa';
+  //console.log(prop2);
 }
 
 //can add new property
@@ -37,3 +38,4 @@ var arr1 = [1, 2, 3];
 arr1.prop2 = 'bbb';
 
 console.log(arr1);
+console.log(arr1.prop2);

@@ -32,6 +32,7 @@ class Car {
     prop1: new (...args: any[]) => Car;
     // prop2 = class - which contructor returns Car
     prop2: { new(...args): Car };
+    prop3: Car;
 
     id: string;
     name: string;

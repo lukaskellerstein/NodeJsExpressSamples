@@ -4,13 +4,14 @@
 // -----------------------------------------------------------------------
 
 //void
-function doSomething1<T>(a: T, b: T){
+function doSomething1<T extends string | number>(a: T, b: T){
     console.log(typeof a);
     console.log(typeof b);
 }
 
 doSomething1<number>(1,2);
 doSomething1<string>("a","b");
+
 
 //func
 function doSomething2<T>(a:T): T{
@@ -21,6 +22,7 @@ doSomething2<number>(1);
 doSomething2<string>("a");
 doSomething2<boolean[]>([true, false]);
 doSomething2<{}>({name:"testObject", description: "test object"});
+
 
 
 // -----------------------------------------------------------------------
@@ -54,7 +56,14 @@ type Car = {
     engine: string;
 }
 
-const doSomething5 = <T extends string,U extends Car,V extends "Vehical" | "Human">(obj1: T, obj2: U, type: V) => {
+const doSomething5 = <T extends string,U extends Car,V extends "Vehical" | "Human">(obj1: string, obj2: Car, type: "Vehical" | "Human") => {
+    console.log(obj1);
+    console.log(obj2);
+    console.log(type);
+}
+
+
+const doSomething6 = (obj1: string, obj2: Car, type: "Vehical" | "Human") => {
     console.log(obj1);
     console.log(obj2);
     console.log(type);
@@ -112,12 +121,14 @@ const result3 = getLength<number>(4);
 
 class A {}
 class B {}
+type C = {}
 const factory = <T extends A | B>(a: new () => T): T => {
     return new a();
 }
 
 const test1 = factory(A);
 const test2 = factory(B);
+const test3 = factory(C);
 
 
 // -----------------------------------------------------------------------

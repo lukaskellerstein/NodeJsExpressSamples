@@ -14,3 +14,5 @@ namespace buildLabel {
 }
 
 console.log(buildLabel("Sam Smith"));
+
+const aaa = buildLabel.prefix;

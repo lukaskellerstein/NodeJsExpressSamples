@@ -19,7 +19,7 @@ interface Y {
 }
 
 //Will filter static values
-let fn = (arg: Y) => {
+let fn = (arg: X | Y) => {
   (new arg.Attr1()).attr;
   (new arg.Attr1()).staticAttr;
   (new arg.Attr2()).attr;

@@ -17,3 +17,7 @@ console.log(typeof arr1);
 // RESULT = Array is object --------------------------
 console.log(Array.isArray(obj1));
 console.log(Array.isArray(arr1));
+
+
+arr1.push('ddd');
+

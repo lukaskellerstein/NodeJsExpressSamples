@@ -16,7 +16,7 @@ type Draggable = {
 }
 
 
-// type union
+// type "OR"
 type UIElement = Tagged | Draggable;
 
 

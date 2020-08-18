@@ -20,7 +20,7 @@ console.log(earth1());
 const newWorld2 = () => {
   let var1 = 0;
 
-  return function addNewPeople() {
+  return () => {
     var1++;
     return var1;
   };

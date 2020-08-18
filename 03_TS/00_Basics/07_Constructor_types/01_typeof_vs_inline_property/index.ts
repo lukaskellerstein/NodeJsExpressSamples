@@ -26,8 +26,8 @@ class A {
   }
   
   // typeof
-  function factoryMethod1 (C: typeof A) {
-    return new C()
+  function factoryMethod1 (asdasdasdadasd: typeof A) {
+    return new asdasdasdadasd()
   }
   
   const testA = factoryMethod1(A);

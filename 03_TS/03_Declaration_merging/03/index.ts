@@ -17,8 +17,9 @@ namespace Car {
             this.hp = hp;
         }
     }
-}
 
+    
+}
 
 
 const testCar = new Car();

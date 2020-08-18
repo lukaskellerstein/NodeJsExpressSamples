@@ -14,8 +14,9 @@ const firstname = { firstname: "Lukas" }
 const surname = { surname: "Kellerstein" }
 const occupation = { occupation: "Software Developer" }
 const nationality = { nationality: "Czech" }
+const tagged = {tags: []};
 console.log(mydetails);
-Object.assign(mydetails,surname, firstname, occupation, nationality);
+Object.assign(mydetails,surname, firstname, occupation, nationality, tagged);
 console.log(mydetails);
 
 

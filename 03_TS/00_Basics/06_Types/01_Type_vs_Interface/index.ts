@@ -16,8 +16,8 @@ type Draggable1 = {
 }
 
 
-// type intersection
-type UIElement1 = Tagged1 & Draggable1;
+// type union
+type UIElement1 = Tagged1 & Draggable1 ;
 
 // instantiate
 const aaa: UIElement1 = {
@@ -50,7 +50,7 @@ interface Draggable2 {
     drag(): never;
 }
 
-// interface intersection
+// interface unions
 interface UIElement2 extends Tagged2, Draggable2 {}
 
 // instantiate

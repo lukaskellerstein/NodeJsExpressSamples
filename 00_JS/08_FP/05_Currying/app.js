@@ -23,6 +23,7 @@ const multiply2 = a => b => c => a * b * c;
 const result2 = multiply2(2)(5)(10);
 console.log(result2);
 
+
 //--------------
 // advantage
 //--------------
@@ -30,7 +31,7 @@ console.log(result2);
 // 1) Can create only partial calls and store them into variables
 const multiplyBy2 = multiply2(2);
 // and then call it for different number
-const result3 = multiplyBy2(5, 1);
-const result4 = multiplyBy2(6, 2);
-const result5 = multiplyBy2(7, 3);
-const result6 = multiplyBy2(8, 4);
+const result3 = multiplyBy2(5)(1);
+const result4 = multiplyBy2(6)(2);
+const result5 = multiplyBy2(7)(3);
+const result6 = multiplyBy2(8)(4);
