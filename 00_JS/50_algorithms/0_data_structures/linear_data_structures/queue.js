@@ -1,4 +1,4 @@
-// Queue class 
+// Queue class - FIFO
 class Queue {
     // Array is used to implement a Queue 
     constructor() {

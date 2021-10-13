@@ -35,12 +35,23 @@ wait(3000).then(() => console.log('Hello!')); // 'Hello!'
 
 
 // 2 ---------------------
+// Multiple independent handlers (each handler handles response independently on other handlers)
 
 var p = new Promise(function (resolve, reject) {
   setTimeout(() => resolve(4), 2000);
 });
 
-// handler can't change promise, just value
+// handler can change promise result value just inside his context (if independent handlers)
+p.then((res) => {
+  res += 2;
+  console.log(res);
+  return res;
+});
+
+// finally gets 6
+p.then((res) => console.log(res));
+
+// handler can change promise result value just inside his context (if independent handlers)
 p.then((res) => {
   res += 2;
   console.log(res);
@@ -49,9 +60,32 @@ p.then((res) => {
 // still gets 4
 p.then((res) => console.log(res));
 
-
-
 // 3 ---------------------
+// Multiple dependent handlers (each handler handles response dependently on previous handlers)
+// more viz. chaining
+
+var p = new Promise(function (resolve, reject) {
+  setTimeout(() => resolve(40), 2000);
+});
+
+// handler can change promise result value, but has to return it !!!
+p.then((res) => {
+  res += 2;
+  console.log(res);
+  return res;
+})
+  // gets 42
+  .then((res) => console.log(res))
+  // without return nothing will be returned from this section
+  .then((res) => {
+    res += 2;
+    console.log(res);
+  })
+  // gets undefined (previous section doesn't return anything)
+  .then((res) => console.log(res));
+
+
+// 4 ---------------------
 
 // original way howto create immediately resolved promise
 var p1 = new Promise((resolve) => resolve("foo"));

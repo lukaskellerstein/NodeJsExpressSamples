@@ -1,5 +1,3 @@
-
-
 // ----------------------------------
 // ----------------------------------
 // ARRAY - In JavaScript, arrays can grow dynamically. Don't mix with .NET Array
@@ -58,7 +56,77 @@ arr1.forEach(item => {
 });
 
 //2 - Find - O(n)
-var aaa = arr1.find(x => x == "ddd");
+var aaa = arr1.find(x => x === "ddd");
 
 //3 - Filter - O(n)
-var bbb = arr1.filter(x => x == "ddd");
+var bbb = arr1.filter(x => x === "ddd");
+
+
+
+// ----------------------------------
+// Are the two arrays the same?
+// ----------------------------------
+var arr1 = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'];
+var arr2 = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'];
+var arr3 = ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff'];
+
+
+const areSame = (arr1, arr2) => {
+
+    let result = true;
+
+    arr1.forEach((value, index) => {
+
+        let arr2Value = arr2[index];
+
+        if (value !== arr2Value) result = false;
+    })
+
+    arr2.forEach((value, index) => {
+
+        let arr1Value = arr1[index];
+
+        if (value !== arr1Value) result = false;
+    })
+
+    return result;
+}
+
+
+console.log(areSame(arr1, arr2));
+console.log(areSame(arr1, arr3));
+
+
+// ----------------------------------
+// IS one array a subset of another array ?
+// ----------------------------------
+
+var arr1 = ['ccc', 'ddd'];
+var arr2 = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'];
+var arr3 = ['aaa', 'bbb', 'ccc'];
+
+const isSubset = (arr1, arr2) => {
+
+    let result = true;
+
+    arr1.forEach(value => {
+
+        let r = arr2.find((v) => v === value);
+
+        if (r === undefined) result = false;
+    })
+
+    return result;
+}
+
+console.log(isSubset(arr1, arr2));
+console.log(isSubset(arr1, arr3));
+
+
+
+// ----------------------------------
+// K’th Smallest/Largest Element in Unsorted Array
+// ----------------------------------
+
+// 1) Sort Array and return value on K'th index
+// 2) use Min/Max heap and K'th times remove the top element

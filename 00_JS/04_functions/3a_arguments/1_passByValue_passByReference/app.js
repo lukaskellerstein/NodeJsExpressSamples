@@ -11,6 +11,18 @@ changeNumber(num1);
 console.log(num1);
 
 // --------------------------------------------------
+// Pass by value - Primitives
+// --------------------------------------------------
+var str1 = "AAA";
+
+function changeString(str) {
+  str += "BBB";
+}
+
+changeString(str1);
+console.log(str1);
+
+// --------------------------------------------------
 // Pass by reference - Objects
 // --------------------------------------------------
 let obj1 = {

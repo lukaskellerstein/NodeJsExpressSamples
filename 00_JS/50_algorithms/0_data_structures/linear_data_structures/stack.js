@@ -1,4 +1,4 @@
-// Stack class 
+// Stack class - LIFO
 class Stack {
 
     // Array is used to implement stack 

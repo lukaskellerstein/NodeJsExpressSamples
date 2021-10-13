@@ -14,9 +14,9 @@ const firstname = { firstname: "Lukas" }
 const surname = { surname: "Kellerstein" }
 const occupation = { occupation: "Software Developer" }
 const nationality = { nationality: "Czech" }
-const tagged = {tags: []};
+const tagged = { tags: [] };
 console.log(mydetails);
-Object.assign(mydetails,surname, firstname, occupation, nationality, tagged);
+Object.assign(mydetails, surname, firstname, occupation, nationality, tagged);
 console.log(mydetails);
 
 
@@ -25,8 +25,8 @@ console.log(mydetails);
 //---------------------------
 
 // helper method for mixin classes
-function classMixin(cls, ...src) {
-    for (let _cl of src) {
+function classMixin(cls, ...otherClasses) {
+    for (let _cl of otherClasses) {
         for (var key of Object.getOwnPropertyNames(_cl.prototype)) {
             cls.prototype[key] = _cl.prototype[key]
         }
@@ -43,9 +43,9 @@ class Tyre {
         console.log('brake');
     }
 }
-class Steering{
+class Steering {
     steer(x, y) {
-        console.log('steer', x,y);
+        console.log('steer', x, y);
     }
 }
 class Wiper {
@@ -63,8 +63,8 @@ class Engine {
 classMixin(Car, Wheel, Tyre, Steering, Wiper, Engine)
 
 const car = new Car()
-car.brake() 
+car.brake()
 car.wipe(200)
 car.start()
-car.drive() 
-car.steer(10,20) 
+car.drive()
+car.steer(10, 20)

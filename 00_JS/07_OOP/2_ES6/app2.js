@@ -29,14 +29,22 @@ class AccountModel extends baseModel {
     this.url += '/accounts/';
   }
 
+  // getter
   get accountsData() {
     //calculated attribute getter
     // ... make XHR
     return this.data;
+  }
+
+  set accountsData(value) {
+    this.data = value + "CCC";
   }
 }
 
 let accounts = new AccountModel(5);
 accounts.getName();
 accounts.getUrl();
+console.log('Data is %s', accounts.accountsData);
+
+accounts.accountsData = "CHANGED";
 console.log('Data is %s', accounts.accountsData);

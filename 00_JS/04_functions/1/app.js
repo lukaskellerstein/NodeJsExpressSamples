@@ -3,7 +3,7 @@ var result = () => {
   return 'aaa';
 };
 
-var result2 = function() {
+var result2 = function () {
   return 'aaa';
 };
 
@@ -12,7 +12,7 @@ function doSomething() {
   return 'aaa';
 }
 
-function doSomething(text){
+function doSomething(text) {
   return text;
 }
 

@@ -1,3 +1,5 @@
+var z = 99;
+
 console.log('global', typeOfGlobalObject(this));
 console.log('global', typeOfGlobalObject(global));
 
@@ -97,7 +99,7 @@ func6();
 // 6 - OBJECT ---------------------------------------------------
 var obj1 = {
   name: 'someName',
-  func1: function() {
+  func1: function () {
     console.log('obj1.func1', typeOfGlobalObject(this));
   }
 };
@@ -108,7 +110,7 @@ obj1.func1();
 
 var obj2 = {
   name: 'someName',
-  func1: function() {
+  func1: function () {
     console.log('obj2.func1', typeOfGlobalObject(this));
   }
 };
@@ -122,12 +124,26 @@ myFunc();
 var obj3 = {
   name: 'someName',
   func1: () => {
-        var aaa = 5;
-        console.log('obj3.func1', typeOfGlobalObject(this));
+    var aaa = 5;
+    console.log('obj3.func1', typeOfGlobalObject(this));
   }
 };
 
 obj3.func1();
+
+// vs.
+
+// arrow function 2
+var obj4 = {
+  name: 'someName',
+  func1: () => {
+    var aaa = 5;
+    console.log('obj4.func1', typeOfGlobalObject(this));
+  }
+};
+
+var myFunc1 = obj4.func1;
+myFunc1();
 
 // --------------------------------------------------------------------
 // --------------------------------------------------------------------

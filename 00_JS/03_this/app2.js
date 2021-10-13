@@ -6,8 +6,8 @@
 const someObject = {
   names: ['Lukas', 'Adam'],
   city: 'Prague',
-  getInfo: function() {
-    return this.names.map(function(item) {
+  getInfo: function () {
+    return this.names.map(function (item) {
       return `${item} from ${this.city}`;
     });
   }
@@ -20,7 +20,7 @@ console.log(someObject.getInfo());
 const someObject2 = {
   names: ['Lukas', 'Adam'],
   city: 'Prague',
-  getInfo: function() {
+  getInfo: function () {
     return this.names.map(item => {
       return `${item} from ${this.city}`;
     });

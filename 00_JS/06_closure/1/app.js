@@ -26,7 +26,7 @@ const newWorld2 = () => {
   };
 };
 
-const earth = newWorld2();
+const earth2 = newWorld2();
 
 console.log(earth2());
 console.log(earth2());
