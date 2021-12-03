@@ -1,11 +1,11 @@
-import * as bodyParser from 'body-parser';
-import * as cors from 'cors';
-import * as express from 'express';
-import { cloneDeep } from 'lodash';
+import * as bodyParser from "body-parser";
+import * as cors from "cors";
+import * as express from "express";
+import { cloneDeep } from "lodash";
 
-import { clusterDatabase } from './db/cluster.db';
-import { endpointDatabase } from './db/endpoint.db';
-import { getGuid, sleep } from './helpers';
+import { clusterDatabase } from "./db/cluster.db";
+import { endpointDatabase } from "./db/endpoint.db";
+import { getGuid, sleep } from "./helpers";
 
 let server = express();
 server.use(cors());
@@ -18,7 +18,7 @@ let endpointDb = endpointDatabase;
 
 server.get("/", (req, res) => {
   res.json({
-    message: "Your API is WORKING ..."
+    message: "Your API is WORKING ...",
   });
 });
 
@@ -50,7 +50,7 @@ server.put("/cluster/:id", (req, res) => {
   let id = req.params.id;
   const itemOrigin = cloneDeep(req.body);
 
-  clusterDb = clusterDb.filter(o => o.metadata.uid !== id);
+  clusterDb = clusterDb.filter((o) => o.metadata.uid !== id);
   clusterDb.push(itemOrigin);
 
   res.json({});
@@ -58,7 +58,7 @@ server.put("/cluster/:id", (req, res) => {
 
 server.get("/cluster/:id", (req, res) => {
   let id = req.params.id;
-  const item = clusterDb.filter(o => o.metadata.uid === id);
+  const item = clusterDb.filter((o) => o.metadata.uid === id);
   res.json(item);
 });
 
@@ -88,7 +88,7 @@ server.put("/endpoint/:id", (req, res) => {
   let id = req.params.id;
   const itemOrigin = cloneDeep(req.body);
 
-  endpointDb = endpointDb.filter(o => o.metadata.uid !== id);
+  endpointDb = endpointDb.filter((o) => o.metadata.uid !== id);
   endpointDb.push(itemOrigin);
 
   res.json({});
@@ -96,7 +96,7 @@ server.put("/endpoint/:id", (req, res) => {
 
 server.get("/endpoint/:id", (req, res) => {
   let id = req.params.id;
-  const item = endpointDb.filter(o => o.metadata.uid === id);
+  const item = endpointDb.filter((o) => o.metadata.uid === id);
   res.json(item);
 });
 
@@ -145,7 +145,7 @@ server.put("/500", (req, res) => {
 server.get("/test", (req, res) => {
   sleep(1000).then(() => {
     res.json({
-      aaa: NaN
+      aaa: NaN,
     });
   });
 });
