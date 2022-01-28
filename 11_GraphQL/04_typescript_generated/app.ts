@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { resolvers } from "./graphql/resolvers/todo.resolvers";
 import * as fs from "fs";
 import * as path from "path";
+import cors from "cors";
 
 // ------------------------------------------------------------------------
 // MongoDB connect
@@ -24,6 +25,9 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // GraphQL + Apollo server + Express
 // ------------------------------------------------------------------------
 const app = express();
+
+//cors
+app.use(cors());
 
 let apolloServer: ApolloServer | null = null;
 
