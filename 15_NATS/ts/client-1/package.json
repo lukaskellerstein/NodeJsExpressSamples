@@ -1,0 +1,19 @@
+{
+  "name": "client-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nats": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "4.5.5"
+  },
+  "type": "module"
+}
