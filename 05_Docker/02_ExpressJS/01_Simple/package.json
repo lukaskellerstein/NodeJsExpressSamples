@@ -9,7 +9,7 @@
   "author": "lukaskellerstein",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "typescript": "^2.6.2"
   }
 }
