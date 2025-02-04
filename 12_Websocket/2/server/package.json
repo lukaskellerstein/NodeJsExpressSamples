@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ws": "^8.2.2",
+    "uuid": "^8.3.2",
+    "ws": "^8.4.2"
+  },
+  "devDependencies": {
+    "typescript": "4.5.5"
+  }
+}

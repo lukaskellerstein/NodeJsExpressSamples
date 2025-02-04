@@ -1,0 +1,23 @@
+{
+  "name": "90_webpack_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nats": "^2.6.0",
+    "node-fetch": "^3.2.0",
+    "puppeteer-core": "^13.3.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "typescript": "4.5.5"
+  },
+  "type": "module"
+}
