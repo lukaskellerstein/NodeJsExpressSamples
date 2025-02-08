@@ -1,4 +1,3 @@
-
 // ----------------------------------
 // ----------------------------------
 // QUICK SORT
@@ -11,67 +10,55 @@
 // ----------------------------------
 // ----------------------------------
 
-const arr = [31, 27, 28, 42, 13, 8, 11, 30, 17, 41, 15, 43, 1, 36, 9, 16, 20, 35, 48, 37, 7, 26, 34, 21, 22, 6, 29, 32, 49, 10, 12, 19, 24, 38, 5, 14, 44, 40, 3, 50, 46, 25, 18, 33, 47, 4, 45, 39, 23, 2];
-
-
 const swap = (arr, firstIndex, secondIndex) => {
-    var temp = arr[firstIndex];
-    arr[firstIndex] = arr[secondIndex];
-    arr[secondIndex] = temp;
-}
-
+  let temp = arr[firstIndex];
+  arr[firstIndex] = arr[secondIndex];
+  arr[secondIndex] = temp;
+};
 
 const partition = (arr, left, right) => {
+  let midpoint = Math.floor((right + left) / 2);
+  let pivot = arr[midpoint];
 
-    let midpoint = Math.floor((right + left) / 2);
-    let pivot = arr[midpoint];
-
-    while (left <= right) {
-
-        while (arr[left] < pivot) {
-            left++;
-        }
-
-        while (arr[right] > pivot) {
-            right--;
-        }
-
-        if (left <= right) {
-            swap(arr, left, right);
-            left++;
-            right--;
-        }
+  while (left <= right) {
+    while (arr[left] < pivot) {
+      left++;
     }
 
-    return left;
-}
+    while (arr[right] > pivot) {
+      right--;
+    }
 
+    if (left <= right) {
+      swap(arr, left, right);
+      left++;
+      right--;
+    }
+  }
+
+  return left;
+};
 
 function quickSort(arr, left, right) {
+  if (left < right) {
+    let index = partition(arr, left, right);
 
-    var index;
+    // Recursively sort the left and right partitions
+    quickSort(arr, left, index - 1);
+    quickSort(arr, index, right);
+  }
 
-    if (arr.length > 1) {
-
-        index = partition(arr, left, right);
-
-        if (left < index - 1) {
-            quickSort(arr, left, index - 1);
-        }
-
-        if (index < right) {
-            quickSort(arr, index, right);
-        }
-
-    }
-
-    return arr;
+  return arr;
 }
 
+// ----------------------------------
+// TEST
+// ----------------------------------
 
+let arr = [5, 46, 34, 2, 6, 14, 9, 7, 50, 22];
 
-console.log(arr);
+console.log("Unsorted Array:", arr);
 
-var result = quickSort(arr, 0, arr.length - 1);
+let result = quickSort(arr, 0, arr.length - 1);
 
-console.log(result);
+console.log("Sorted Array:", result);

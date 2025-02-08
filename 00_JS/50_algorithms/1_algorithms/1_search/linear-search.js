@@ -1,8 +1,6 @@
-
-
 // ----------------------------------
 // ----------------------------------
-// LINEAR SEARCH 
+// LINEAR SEARCH
 //
 // Time complexity: O(n)
 //
@@ -12,26 +10,21 @@
 // ----------------------------------
 // ----------------------------------
 
-var searchValue = 8;
-var arr = [
-    8,
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-];
-
+var searchValue = 22;
+let arr = [5, 46, 34, 2, 6, 14, 9, 7, 50, 22];
 
 // FOR
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == searchValue) console.log("Value found - for");
+  if (arr[i] === searchValue) {
+    console.log("Value found");
+    break; // Optional: Stops the loop after finding the value
+  }
 }
 
 // FOREACH
-for (var item in arr) {
-    if (item == searchValue) console.log("Value found - foreach");
+for (var item of arr) {
+  if (item === searchValue) {
+    console.log("Value found");
+    break; // Optional: Stops the loop after finding the value
+  }
 }
